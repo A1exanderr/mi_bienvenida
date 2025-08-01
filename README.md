@@ -124,3 +124,8 @@ git checkout -b nombre-de-la-rama
 Subir la rama al remoto (después de crearla):
 
 git push -u origin nombre-de-la-rama
+# INSTALACION DE KUBERNETS
+  curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | sudo gpg --dearmor -o /usr/share/keyrings/kubernetes-archive-keyring.gpg
+  echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+  sudo apt update
+  sudo apt install -y kubelet kubeadm kubectl
