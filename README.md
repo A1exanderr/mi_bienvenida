@@ -2,8 +2,4 @@
 
 # Autor
 
-Alex Mamani Llojlla
-
-#servidor
-
-test 2
+>Alkey developer<
