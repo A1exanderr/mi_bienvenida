@@ -1,0 +1,64 @@
+✅ PASO 5: Cómo usar todo
+En el MASTER (10.1.2.234):
+bash
+
+
+1
+2
+3
+4
+5
+# Dar permisos de ejecución
+chmod +x instalar-master.sh
+
+# Ejecutar
+./instalar-master.sh
+Te mostrará el token → cópialo. 
+
+En el WORKER (10.1.2.238):
+Edita instalar-worker.sh y pega el token:
+
+bash
+
+
+1
+TOKEN="tu_token_real_aquí"
+Luego:
+
+bash
+
+
+1
+2
+chmod +x instalar-worker.sh
+./instalar-worker.sh
+En tu PC o en el master: probar tráfico
+bash
+
+
+1
+2
+chmod +x simular-trafico.sh
+./simular-trafico.sh
+Y en otra terminal, monitorea:
+
+bash
+
+
+1
+./monitorear.sh
+✅ Resultado esperado
+Al empezar: 2 pods
+Al generar tráfico: sube a 6, 8, 10 pods
+Al terminar: vuelve a 2 pods
+Los recursos se liberan automáticamente
+���️ Consejos finales
+Firewall: Asegúrate de que los puertos estén abiertos:
+6443 (API de Kubernetes)
+8472 (Flannel)
+30080 (tu sitio)
+Optimiza Nginx: Usa el nginx.conf con caché que te di antes.
+CDN: Usa Cloudflare para reducir carga.
+Logs: Revisa con kubectl logs <pod> si hay errores.
+¿Quieres que te genere un archivo ZIP con todos estos scripts listos para descargar?
+¿O que te ayude a automatizar esto con Ansible para futuras instalaciones?

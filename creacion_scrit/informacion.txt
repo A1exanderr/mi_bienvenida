@@ -1,0 +1,4 @@
+Ì¥Å Importante: 
+
+Reemplaza TOKEN con el que te mostr√≥ el master.
+Aseg√∫rate de que el firewall permita los puertos 6443, 8472, 10250.

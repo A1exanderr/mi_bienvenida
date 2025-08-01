@@ -1,0 +1,253 @@
+# Crear estructura de carpetas
+mkdir -p kubernetes-autoescala/{master,worker,test,app}
+
+# ====================
+# í¿¢ MASTER: instalar-master.sh
+# ====================
+cat > kubernetes-autoescala/master/instalar-master.sh << 'EOF'
+#!/bin/bash
+echo "íº€ Iniciando instalaciÃ³n en el MASTER (10.1.2.234)"
+
+# Instalar k3s master
+echo "í´§ Instalando k3s (master)..."
+curl -sfL https://get.k3s.io | sh -
+
+# Esperar
+sleep 10
+
+# Mostrar token
+echo "í´‘ Token para unir el worker:"
+sudo cat /var/lib/rancher/k3s/server/node-token
+echo ""
+
+# Ir a la app
+cd /home/alkey/mi_bienvenida || { echo "âŒ Carpeta mi_bienvenida no encontrada"; exit 1; }
+
+# Construir imagen
+echo "í³¦ Construyendo imagen Docker..."
+sudo nerdctl build -t mi-bienvenida:v1 . --quiet
+
+# Crear despliegue
+cat <<EOF2 > /home/alkey/despliegue.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bienvenida-deployment
+  labels:
+    app: bienvenida
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: bienvenida
+  template:
+    metadata:
+      labels:
+        app: bienvenida
+    spec:
+      containers:
+      - name: nginx
+        image: mi-bienvenida:v1
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "100Mi"
+            cpu: "100m"
+          limits:
+            memory: "200Mi"
+            cpu: "200m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bienvenida-service
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 30080
+  selector:
+    app: bienvenida
+EOF2
+
+# Aplicar despliegue
+echo "íº€ Aplicando despliegue..."
+sudo kubectl apply -f /home/alkey/despliegue.yaml
+
+# Instalar Metrics Server
+echo "í³Š Instalando Metrics Server..."
+sudo kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+
+sleep 15
+
+# Crear HPA
+cat <<EOF3 > /home/alkey/hpa.yaml
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: bienvenida-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: bienvenida-deployment
+  minReplicas: 2
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70
+EOF3
+
+sudo kubectl apply -f /home/alkey/hpa.yaml
+
+# Estado final
+echo "âœ… Estado actual:"
+sudo kubectl get nodes
+sudo kubectl get pods
+sudo kubectl get hpa
+
+echo "í¾‰ MASTER listo. Usa el token de arriba para el worker."
+EOF
+
+chmod +x kubernetes-autoescala/master/instalar-master.sh
+
+# ====================
+# í¿¡ WORKER: instalar-worker.sh
+# ====================
+cat > kubernetes-autoescala/worker/instalar-worker.sh << 'EOF'
+#!/bin/bash
+echo "í´— Uniendo nodo WORKER al clÃºster"
+
+# === âš ï¸ CAMBIA ESTAS VARIABLES ===
+MASTER_IP="10.1.2.234"
+TOKEN="K10abcdef...::server:1234567890"  # â† PEGA TU TOKEN AQUÃ
+
+# Instalar k3s worker
+curl -sfL https://get.k3s.io | \
+K3S_URL=https://$MASTER_IP:6443 \
+K3S_TOKEN=$TOKEN \
+sh -
+
+sleep 10
+echo "âœ… Worker unido. Verifica en el master con: sudo kubectl get nodes"
+EOF
+
+chmod +x kubernetes-autoescala/worker/instalar-worker.sh
+
+# ====================
+# í¿  TEST: simular-trafico.sh
+# ====================
+cat > kubernetes-autoescala/test/simular-trafico.sh << 'EOF'
+#!/bin/bash
+echo "í´¥ Simulando trÃ¡fico alto durante 3 minutos..."
+
+if ! command -v hey &> /dev/null; then
+    echo "í³¥ Instalando 'hey'..."
+    go install github.com/rakyll/hey@latest
+    export PATH=$PATH:~/go/bin
+fi
+
+echo "íº€ Enviando trÃ¡fico a http://10.1.2.234:30080/"
+hey -z 3m -c 100 -q 100 http://10.1.2.234:30080/
+
+echo "âœ… Prueba finalizada."
+EOF
+
+chmod +x kubernetes-autoescala/test/simular-trafico.sh
+
+# ====================
+# í¿  TEST: monitorear.sh
+# ====================
+cat > kubernetes-autoescala/test/monitorear.sh << 'EOF'
+#!/bin/bash
+echo "í±€ Monitoreando HPA, Pods y Recursos..."
+
+kubectl get hpa -w &
+HPA_PID=$!
+
+kubectl get pods -w &
+PODS_PID=$!
+
+echo "í³Š Uso de recursos (actualizando cada 2s):"
+watch -n 2 kubectl top pods
+
+kill $HPA_PID $PODS_PID 2>/dev/null
+EOF
+
+chmod +x kubernetes-autoescala/test/monitorear.sh
+
+# ====================
+# í¿¡ TEST: prueba-nginx.conf (opcional)
+# ====================
+cat > kubernetes-autoescala/test/prueba-nginx.conf << 'EOF'
+worker_processes 1;
+events { worker_connections 1024; }
+
+http {
+    include       /etc/nginx/mime.types;
+    sendfile      on;
+    tcp_nopush    on;
+    gzip          on;
+    gzip_types    text/css application/javascript;
+
+    server {
+        listen 80;
+        location / {
+            root /usr/share/nginx/html;
+            try_files $uri $uri/ =404;
+        }
+
+        location ~* \.(css|js|png|jpg|jpeg|gif|ico|svg)$ {
+            expires 1y;
+            add_header Cache-Control "public, immutable";
+        }
+    }
+}
+EOF
+
+# ====================
+# í¿¢ APP: Dockerfile optimizado
+# ====================
+cat > kubernetes-autoescala/app/Dockerfile << 'EOF'
+FROM nginx:alpine
+COPY html/ /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/nginx.conf
+EXPOSE 80
+EOF
+
+# ====================
+# í³„ README.md general
+# ====================
+cat > kubernetes-autoescala/README.md << 'EOF'
+# íº€ ClÃºster Kubernetes con Auto-Escalado
+
+## Estructura
+- `/master`: Script para instalar el nodo master (k3s)
+- `/worker`: Script para unir el nodo worker
+- `/test`: Herramientas para probar trÃ¡fico y monitorear
+- `/app`: Archivos recomendados para tu aplicaciÃ³n
+
+## í´ Notas
+- En `instalar-worker.sh`, reemplaza:
+  - `MASTER_IP` â†’ IP de tu master (ej: 10.1.2.234)
+  - `TOKEN` â†’ El token que muestra el master
+
+## ï¿½ï¿½ CÃ³mo usar
+1. Ejecuta `master/instalar-master.sh` en el servidor 1
+2. Copia el token mostrado
+3. Edita `worker/instalar-worker.sh` con el token
+4. Ejecuta en el servidor 2
+5. Usa `test/simular-trafico.sh` para probar
+EOF
+
+# AÃ±adir README a cada carpeta
+echo "DocumentaciÃ³n en cada carpeta..." >> kubernetes-autoescala/master/README.md
+echo "DocumentaciÃ³n en cada carpeta..." >> kubernetes-autoescala/worker/README.md
+echo "DocumentaciÃ³n en cada carpeta..." >> kubernetes-autoescala/test/README.md
+echo "DocumentaciÃ³n en cada carpeta..." >> kubernetes-autoescala/app/README.md

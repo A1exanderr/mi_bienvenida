@@ -1,0 +1,14 @@
+kubernetes-autoescala/
+├── master/
+│   ├── instalar-master.sh
+│   └── README.md
+├── worker/
+│   ├── instalar-worker.sh
+│   └── README.md
+├── test/
+│   ├── simular-trafico.sh
+│   ├── monitorear.sh
+│   └── prueba-nginx.conf
+├── app/
+│   └── Dockerfile
+└── README.md
