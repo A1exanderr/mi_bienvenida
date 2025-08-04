@@ -156,3 +156,10 @@ kubectl get pods -n kube-system
 kubectl get pods -n kube-flannel
 
 kubectl get nodes -o wide
+
+
+
+#super extra
+sudo modprobe br_netfilter
+kubectl delete -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
