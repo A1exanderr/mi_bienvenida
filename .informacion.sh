@@ -89,3 +89,15 @@ kubectl get nodes
 kubectl get pods -n kube-system -o wide | grep flannel
 kubectl logs -n kube-system -l app=flannel
 kubectl get nodes
+
+#en kuber 1 ejecutar para unir los dos nodos
+kubeadm token create --print-join-command
+#el resultado Copia ese comando y pégalo en kuber2 como sudo
+
+
+#en kuber uno verifica 
+kubectl get nodes
+#y te tiene que salir asi 
+#NAME     STATUS   ROLES           AGE     VERSION
+#kuber1   Ready    control-plane   20m     v1.30.14
+#kuber2   Ready    <none>          30s     v1.30.14
