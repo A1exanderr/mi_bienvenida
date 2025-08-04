@@ -46,3 +46,28 @@ curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | sudo gpg --
 echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 sudo apt update
 sudo apt install -y kubelet kubeadm kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
+
+
+
+sudo apt install -y containerd
+sudo mkdir -p /etc/containerd
+containerd config default | sudo tee /etc/containerd/config.toml
+sudo systemctl restart containerd
+sudo systemctl enable containerd
+
+
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+#erro
+
+# Activa temporalmente (hasta el siguiente reinicio):
+sudo sysctl -w net.ipv4.ip_forward=1
+
+# Lo vuelve permanente:
+echo 'net.ipv4.ip_forward=1' | sudo tee -a /etc/sysctl.conf
+
+# Aplica el cambio sin reiniciar:
+sudo sysctl -p
+
+cat /proc/sys/net/ipv4/ip_forward
+#resultado es 1
