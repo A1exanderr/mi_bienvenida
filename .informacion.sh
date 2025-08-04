@@ -133,3 +133,26 @@ kubectl rollout restart daemonset kube-flannel-ds -n kube-flannel
 #verificar
 kubectl get pods -n kube-flannel -o wide
 kubectl get nodes
+
+
+
+#EXTRA QUE SOLUCIONO
+kubectl delete -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+
+kubectl get pods -n kube-flannel
+
+sudo rm -rf /etc/cni/net.d/*
+
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+
+#sudo systemctl restart kubelet
+
+kubectl get nodes
+
+kubectl get nodes -o wide
+
+kubectl get pods -n kube-system
+
+kubectl get pods -n kube-flannel
+
+kubectl get nodes -o wide
