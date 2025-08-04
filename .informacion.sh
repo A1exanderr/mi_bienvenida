@@ -56,9 +56,19 @@ containerd config default | sudo tee /etc/containerd/config.toml
 sudo systemctl restart containerd
 sudo systemctl enable containerd
 
+#sudo apt install -y cri-tools
 
-sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+
+#sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+sudo kubeadm init   --apiserver-advertise-address=10.1.2.240   --pod-network-cidr=10.244.0.0/16   --ignore-preflight-errors=NumCPU
 #erro
+
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+
+
 
 # Activa temporalmente (hasta el siguiente reinicio):
 sudo sysctl -w net.ipv4.ip_forward=1
@@ -71,3 +81,11 @@ sudo sysctl -p
 
 cat /proc/sys/net/ipv4/ip_forward
 #resultado es 1
+
+
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+kubectl get pods -n kube-system -o wide
+kubectl get nodes
+kubectl get pods -n kube-system -o wide | grep flannel
+kubectl logs -n kube-system -l app=flannel
+kubectl get nodes
