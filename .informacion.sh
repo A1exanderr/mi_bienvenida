@@ -163,3 +163,19 @@ kubectl get nodes -o wide
 sudo modprobe br_netfilter
 kubectl delete -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+
+sysctl net.bridge.bridge-nf-call-iptables
+sysctl net.bridge.bridge-nf-call-ip6tables
+sysctl net.ipv4.ip_forward
+lsmod | grep br_netfilter
+sudo sysctl -w net.ipv4.ip_forward=1
+
+sudo nano /etc/sysctl.d/99-kubernetes-cri.conf
+/*
+net.bridge.bridge-nf-call-iptables  = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+net.ipv4.ip_forward                 = 1
+*/
+
+sudo sysctl --system
+sudo systemctl restart kubelet
