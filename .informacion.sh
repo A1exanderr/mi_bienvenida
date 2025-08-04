@@ -36,6 +36,9 @@ dstat          # Estadísticas combinadas
 #===============================================================
 
 
+# Desactivar swap
+sudo swapoff -a
+sudo sed -i '/ swap / s/^/#/' /etc/fstab
 
 
 sudo apt install -y apt-transport-https ca-certificates curl gnupg lsb-release
