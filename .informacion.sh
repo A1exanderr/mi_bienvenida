@@ -101,3 +101,35 @@ kubectl get nodes
 #NAME     STATUS   ROLES           AGE     VERSION
 #kuber1   Ready    control-plane   20m     v1.30.14
 #kuber2   Ready    <none>          30s     v1.30.14
+
+
+#en master
+sudo kubeadm init phase addon kube-proxy
+
+##forzar Esto va a forzar a que vuelva a recrearse con el entorno ya funcional:
+kubectl rollout restart daemonset kube-flannel-ds -n kube-flannel
+
+kubectl get pods -n kube-flannel -o wide
+#En ambos nodos (kuber1 y kuber2), ejecutá:
+sudo modprobe br_netfilter
+lsmod | grep br_netfilter
+#Asegurar la configuración persistente
+sudo tee /etc/modules-load.d/k8s.conf > /dev/null <<EOF
+br_netfilter
+EOF
+#Y luego configura los parámetros sysctl:
+sudo tee /etc/sysctl.d/99-kubernetes-cri.conf > /dev/null <<EOF
+net.bridge.bridge-nf-call-iptables  = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+net.ipv4.ip_forward                 = 1
+EOF
+
+
+#aplicar los cambios 
+sudo sysctl --system
+
+#Reiniciar pods de Flannel
+kubectl rollout restart daemonset kube-flannel-ds -n kube-flannel
+#verificar
+kubectl get pods -n kube-flannel -o wide
+kubectl get nodes
