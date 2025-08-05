@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bienvenida
+  labels:
+    app: bienvenida
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: bienvenida
+  template:
+    metadata:
+      labels:
+        app: bienvenida
+    spec:
+      containers:
+      - name: bienvenida
+        image: petobe/desarrollador:latest
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bienvenida-service
+spec:
+  type: NodePort
+  selector:
+    app: bienvenida
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30080
