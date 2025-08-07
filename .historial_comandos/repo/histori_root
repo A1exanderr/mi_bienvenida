@@ -1,0 +1,60 @@
+clear
+nano /etc/apt/sources.list
+sudo apt update
+apt update
+apt upgrade
+clear
+init 0
+apt install sudo
+sudo init 0
+clear
+cd
+nano user.sh
+clear
+chmod +x user.sh 
+ls
+bash user.sh 
+clear
+exit
+ping 10.1.4.186
+clear
+ip add
+nano /etc/nginx/sites-available/default 
+cd /etc/nginx/sites-available/
+ls
+nano default 
+rm default 
+nano default 
+nano default 
+/etc/init.d/nginx restart
+/etc/init.d/nginx restart
+nano default 
+/etc/init.d/nginx restart
+clear
+exit
+cd /etc/nginx/sites-available/default 
+cd /etc/nginx/sites-available/
+rm default 
+nano default 
+/etc/init.d/nginx restart
+nano /var/www/html/
+nano /var/www/html/index.nginx-debian.html 
+/etc/init.d/nginx restart
+nano /var/www/html/index.nginx-debian.html 
+exit
+cd /root/
+ls
+rm user.sh 
+cp default /etc/nginx/sites-available/
+/etc/init.d/nginx restart
+exit
+history 
+clear
+cat /root/.bash_history 
+exit
+clear
+exit
+passwd 
+exit
+nano /etc/resolv.conf 
+exit
