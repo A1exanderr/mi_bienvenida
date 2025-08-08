@@ -20,6 +20,7 @@ kubectl get deployment metrics-server -n kube-system
 
 #PARA INSTALAR EL MANIFIESTO
 kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+
 #VERIFICAR
 kubectl get deployment metrics-server -n kube-system
 #Verifica que devuelve métricas
@@ -37,3 +38,12 @@ KUBE_EDITOR="nano" kubectl edit deployment metrics-server -n kube-system
 */
 #verificamos
 kubectl get pods -n kube-system | grep metrics-server
+
+#comanod que he utilizado despues del aplicar
+kubectl apply -f geoportal-back-hpa_completo.yaml
+cd ..
+cd angular/
+kubectl apply -f geoportal-frontend-hpa_completo.yaml
+kubectl get hpa
+kubectl describe hpa geoportal-back-hpa
+kubectl describe hpa geoportal-frontend-hpa
