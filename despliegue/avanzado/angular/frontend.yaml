@@ -1,0 +1,84 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: geoportal-frontend
+  labels:
+    app: geoportal-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: geoportal-frontend
+  template:
+    metadata:
+      labels:
+        app: geoportal-frontend
+    spec:
+      containers:
+      - name: geoportal-frontend
+        image: repo.fenix.com/angular/geortal-frontend:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: API_URL
+          value: "http://api.fenix.com"  # Dirección del backend
+      imagePullSecrets:
+      - name: regcred
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: geoportal-frontend-service
+  labels:
+    app: geoportal-frontend
+spec:
+  selector:
+    app: geoportal-frontend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: ClusterIP  # Solo accesible dentro del clúster (lo usará el Ingress)
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: geoportal-frontend-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: geo.fenix.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: geoportal-frontend-service
+                port:
+                  number: 80
+---
+# (Opcional) LoadBalancer para IP fija con MetalLB
+apiVersion: v1
+kind: Service
+metadata:
+  name: geoportal-frontend-lb
+  annotations:
+    metallb.universe.tf/address-pool: default-addresspool
+spec:
+  type: LoadBalancer
+  loadBalancerIP: 10.1.10.106  # IP fija de MetalLB (de tu pool)
+  selector:
+    app: geoportal-frontend
+  ports:
+    - port: 80
+      targetPort: 80
+#kubectl apply -f frontend.yaml
+#kubectl get deployments
+#kubectl get svc
+#kubectl get ingress

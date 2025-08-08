@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: geoportal-back-lb
+  annotations:
+    metallb.universe.tf/address-pool: default-addresspool
+spec:
+  type: LoadBalancer
+  loadBalancerIP: 10.1.10.105  # IP fija
+  selector:
+    app: geoportal-back
+  ports:
+    - port: 80
+      targetPort: 3000
+#kubectl apply -f LoadBalancer.yaml
+#kubectl get svc geoportal-back-lb
