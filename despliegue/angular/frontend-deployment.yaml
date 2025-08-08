@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: geortal-frontend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: geortal-frontend
+  template:
+    metadata:
+      labels:
+        app: geortal-frontend
+    spec:
+      containers:
+      - name: geortal-frontend
+        image: repo.fenix.com/angular/geortal-frontend:latest
+        ports:
+        - containerPort: 80  # Puerto donde corre Angular
+        env:
+        - name: API_URL
+          value: "http://api.fenix.com"  # URL del backend
+      imagePullSecrets:
+      - name: regcred
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: geortal-frontend-service
+spec:
+  type: NodePort
+  selector:
+    app: geortal-frontend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30090  # Puerto externo para acceder al frontend

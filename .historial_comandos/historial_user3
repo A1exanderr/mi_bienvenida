@@ -1,0 +1,976 @@
+clear
+figlet ALEKEY | sudo tee /etc/motd
+clear
+exit
+clear
+sudo su
+clear
+apt install nginx
+sudo apt install nginx
+clear
+sudo su
+curl -sSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc   | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null   && echo "deb https://ngrok-agent.s3.amazonaws.com buster main"   | sudo tee /etc/apt/sources.list.d/ngrok.list   && sudo apt update   && sudo apt install ngrok
+sudo apt install ngrok
+sudo apt update
+clear
+sudo apt install ca-certificates
+sudo update-ca-certificates
+sudo apt update
+sudo nano /etc/apt/sources.list
+cd /etc/apt/sources.list
+cd /etc/apt/
+rm sources.list
+sudo rm sources.list
+sudo nano sources.list
+sudo apt update
+curl -fsSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/ngrok.gpg
+cd
+curl -fsSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/ngrok.gpg
+sudo apt install curl
+curl -fsSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/ngrok.gpg
+}curl -fsSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/ngrok.gpg
+curl -fsSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/ngrok.gpg
+sudo apt update
+sudo rm /etc/apt/sources.list.d/ngrok.list
+cd /etc/apt/sources.list.d/
+ls
+cd
+curl -sSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc   | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null   && echo "deb https://ngrok-agent.s3.amazonaws.com buster main"   | sudo tee /etc/apt/sources.list.d/ngrok.list   && sudo apt update   && sudo apt install ngrok
+clear
+ngrok 80
+ngrok http 80
+ngrok config add-authtoken 2wpIIx0JfWdfizVLyDqWYzWShqr_4ePnHgkcVmd8qenThkYfL
+ngrok http 80
+ngrok http://localhost
+clear
+sudo /etc/init.d/nginx stop
+ping 8.8.8.8
+sudo /etc/init.d/nginx start
+sudo cp /etc/nginx/sites-available/default /root/
+sudo su
+ngrok http 80
+sudo cd /etc/nginx/sites-available/
+cd /etc/nginx/sites-available/
+cp default /var/www/alkey/
+rm default 
+sudo rm default 
+sudo su
+ngrok http 80
+clear
+sudo init 0
+clear
+cat /etc/nginx/sites-available/default 
+ip add
+clear
+ls
+cat /etc/nginx/sites-available/default 
+clear
+cat /etc/nginx/sites-available/default 
+sudo init 0
+clear
+ip add
+clear
+ip add
+}clear
+sudo init 0
+clear
+ip add
+clear
+sudo nano /etc/hostname 
+sudo nano /etc/hosts
+sudo nano /etc/host.conf 
+sudo nano /etc/hosts.allow 
+sudo nano /etc/hosts.deny 
+clear
+reboot
+sudo reboot
+clear
+sudo int 0
+clear
+kls
+clear
+ls
+sudo su
+sudo apt remove nginx nginx-common
+sudo apt purge nginx nginx-common
+sudo apt autoremove
+clear
+history 
+clear
+docker ps
+sudo /etc/init.d/docker start
+clear
+sudo /etc/init.d/docker start
+docker ps
+sudo usermod -aG docker $USER
+docker ps
+sudo reboot
+docker ps
+clear
+ls
+rm default 
+clea
+clear
+mkdir mi_bienvenida
+cd mi_bienvenida/
+clear
+nano Dockerfile
+mkdir html
+cd html/
+clear
+nano index.html
+nano style.ss
+nano style.css
+nano script.js
+clear
+cd ..
+clear
+docker-compose up --build -d
+docker compose up --build -d
+ls
+docker compose up --build -d
+clear
+ls
+cat Dockerfile 
+ls html/
+clear
+nano docker-compose.yml
+docker compose up --build -d
+docker ps
+history 
+sudo su
+clear
+ls
+cat /var/www/alkey/.bash_history 
+clear
+htop
+sudo apt install dstat
+dstat -cdnm --top-cpu
+sudo apt install dstat
+htop
+CLEAR
+clear
+dstat -cdnm --top-cpu
+clear
+sudo init 0
+ip add
+clear
+ip add
+clear
+sudo nano /etc/network/interfaces
+clear
+sudo reboot
+clear
+sudo init 0
+clear
+ls
+mv mi_bienvenida/ mi_bienvenida_2
+clear
+lñs
+clear
+ls
+git config --global credential.helper store
+git clone https://github.com/A1exanderr/mi_bienvenida.git
+clear
+ls
+cd mi_bienvenida
+clear
+lks
+clear
+ls
+nano README.md 
+git add .
+git commit -m servidor_test1
+git config --global user.email "looveyouuu10@gmail.com"
+git config --global user.name "Alex"
+git commit -m "servidor 1"
+git push
+clear
+nano README.md 
+git add .
+git commit -m "servidor test 1"
+git push
+clear
+ls
+git pull
+nano README.md 
+CLEAR
+clear
+ls
+clear
+ls
+nano README.md 
+git checkout -b docker
+git branch
+git add .
+git commit -m "informacion"
+git push
+git push --set-upstream origin docker
+git reset --soft HEAD~1
+git add .
+git commit -m "informacion"
+git push
+git push --set-upstream origin docker
+clear
+ls
+cd ..
+clear
+ls
+cd mi_bienvenida
+clear
+cd ..
+clear
+ls
+cd mi_bienvenida_2/
+clear
+lñs
+clear
+ls
+ls -a
+mv docker-compose.yml /var/www/alkey/mi_bienvenida
+mv Dockerfile /var/www/alkey/mi_bienvenida
+cp -r html/ /var/www/alkey/mi_bienvenida
+ls
+cd html/
+ls -a
+clear
+ls
+cd ..
+clear
+cd ..
+clear
+ls
+sudo rm mi_bienvenida_2/
+sudo rm -r mi_bienvenida_2/
+clear
+ls
+cd cd mi_bienvenida/
+cd mi_bienvenida/
+clear
+git add .
+git commit -m "version estable"
+git push
+clear
+sudo init 0
+clear
+sudo nano /etc/network/interfaces
+sudo init 0
+clear
+sudo nano /etc/hosts
+ping kuber1
+ping kuber2
+clear
+cd mi_bienvenida/
+git pull
+clear
+ls
+./script_redpersistente.sh 
+clear
+sudo reboot
+clear
+sudo swapoff -a
+sudo sed -i '/ swap / s/^/#/' /etc/fstab
+sudo apt install -y apt-transport-https ca-certificates curl gnupg lsb-release
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | sudo gpg --dearmor -o /usr/share/keyrings/kubernetes-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+sudo apt update
+sudo apt install -y kubelet kubeadm kubectl
+cat /etc/modules-load.d/containerd.conf
+sudo apt upgrate
+sudo apt-get upgrade
+clear
+cat <<EOF | sudo tee /etc/modules-load.d/containerd.conf 
+overlay 
+br_netfilter
+EOF
+
+sudo modprobe overlay 
+sudo modprobe br_netfilter
+cat /etc/sysctl.d/99-kubernetes-k8s.conf
+cat <<EOF | sudo tee /etc/sysctl.d/99-kubernetes-k8s.conf
+net.bridge.bridge-nf-call-iptables = 1
+net.ipv4.ip_forward = 1 
+net.bridge.bridge-nf-call-ip6tables = 1 
+EOF
+
+sudo sysctl --system
+sudo apt update
+sudo apt-mark hold kubelet kubeadm kubectl
+sudo apt install -y containerd
+sudo mkdir -p /etc/containerd
+containerd config default | sudo tee /etc/containerd/config.toml
+sudo systemctl restart containerd
+sudo systemctl enable containerd
+sudo nano /etc/containerd/config.toml
+sudo systemctl restart containerd
+sudo init 0
+clear
+sudo nano /etc/hosts
+clear
+reboot
+sudo reboot
+ping kuber2
+clear
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --control-plane-endpoint=kuber1
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+kubeadm token create --print-join-command
+kubectl get nodes
+kubectl get pods -n kube-system
+kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
+kubectl get pods -n kube-system -w
+kubectl get pods -n kube-system
+sudo init 0
+clear
+kubectl get pods -n kube-system
+kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
+kubectl get pods -n kube-flannel
+clear
+kubectl get pods -n kube-flannel
+sudo init 0
+clear
+kubectl get pods -n kube-flannel
+kubectl get pods -n kube-system
+kubectl create deployment nginx --image=nginx
+kubectl expose deployment nginx --port=80 --type=NodePort
+kubectl get services
+kubectl get nodes -o wide
+history 
+clear
+cd mi_bienvenida/
+git pull
+cd ..
+cd mi_bienvenida/
+mkdir .historial_comandos
+cd
+ls -a
+sudo cp /root/.bash_his mi_bienvenida/.historial_comandos/
+sudo su
+clear
+ls
+cd mi_bienvenida/
+clear
+ls
+cd .historial_comandos/
+mkdir worker
+cd worker/
+clear
+ls
+clear
+cd 
+cd mi_bienvenida/
+git add .
+git commit -m "comandos"
+git push
+ls -a
+cd .historial_comandos/
+clear
+ls -a
+ls -lsa
+clear
+ls
+ls -lsa
+mv .bash_history .history_user
+cat .history_user 
+cd
+cp .bash_history mi_bienvenida/.historial_comandos/
+cd  mi_bienvenida/.historial_comandos/
+clear
+ls
+ls -a
+mv .bash_history historial_userss
+clear
+ls
+ls -a
+mv .history_user historial_root
+ls
+mv historial_userss historial_user
+clear
+cd worker/
+nano historial_user
+cd
+cd mi_bienvenida/
+git add .
+git commit -m "comandos"
+git push
+clear
+git pull
+clear
+cd ..
+clear
+history 
+clear
+kubectl get services
+history 
+clear
+kubectl logs -l app=nginx
+kubectl get deployment nginx
+kubectl scale deployment nginx --replicas=3
+kubectl get deployment nginx
+kubectl get pods -l app=nginx
+kubectl describe deployment nginx
+clear
+kubectl get replicaset -l app=nginx
+kubectl get deployment nginx
+kubectl get pods -l app=nginx
+kubectl delete pod nginx-bf5d5cf98-6bzxk
+kubectl get pods -l app=nginx
+kubectl get pods -l app=nginx -w
+kubectl delete service nginx
+kubectl get pods -l app=nginx -w
+kubectl delete deployment nginx
+kubectl delete service nginx
+kubectl get pods -l app=nginx -w
+kubectl get pods -l app=nginx
+clear
+kubectl get deployment nginx
+kubectl get pods -l app=nginx
+kubectl get service nginx
+kubectl get svc
+kubectl get replicaset -l app=nginx
+clar
+ls
+clear
+cd mi_bienvenida/
+clear
+ls
+mkdir .kuber_red
+mv script_redpersistente.sh 
+mv script_redpersistente.sh .kuber_red/
+git pull
+git add .
+git commit -m "mejora"
+git push
+clear
+ls
+mv .informacion.sh .kuber_red/
+ls -a
+clear
+git add .
+git commit -m "mejora"
+git push
+clear
+ls
+cat Dockerfile 
+ls html/
+docker images
+docker images | grep mi-bienvenida
+kubectl get nodes -o wide
+cd
+clear
+ls
+wget https://github.com/containerd/nerdctl/releases/download/v1.7.3/nerdctl-1.7.3-linux-amd64.tar.gz
+sudo apt install wget
+clear
+wget https://github.com/containerd/nerdctl/releases/download/v1.7.3/nerdctl-1.7.3-linux-amd64.tar.gz
+ls
+mkfir nerdctl-1.7.3-linux-amd64.tar.gz 
+mkdir kuber
+mv nerdctl-1.7.3-linux-amd64.tar.gz kuber/
+cd kuber/
+sudo tar -C /usr/local/bin --no-same-owner -xzf nerdctl-1.7.3-linux-amd64.tar.gz
+clear
+ls
+nerdctl --version
+cd ~/mi_bienvenida
+clear
+nerdctl build -t mi-bienvenida:latest .
+nerdctl images | grep mi-bienvenida
+sudo nerdctl images | grep mi-bienvenida
+sudo nerdctl build -t mi-bienvenida:latest .
+mkdir -p ~/buildkit
+cd ~/buildkit
+wget https://github.com/moby/buildkit/releases/download/v0.11.6/buildkit-v0.11.6.linux-amd64.tar.gz
+sudo cp bin/* /usr/local/bin/
+ls
+tar -xzf buildkit-v0.11.6.linux-amd64.tar.gz
+sudo cp bin/* /usr/local/bin/
+buildctl --version
+sudo buildkitd --addr unix:///run/buildkit/buildkitd.sock --group containerd &
+ps aux | grep buildkitd
+sudo chown -R root:containerd /run/buildkit
+sudo chmod -R 775 /run/buildkit
+sudo usermod -aG containerd alkey
+cd ~/mi_bienvenida
+nerdctl build -t mi-bienvenida:latest .
+sudo nerdctl build -t mi-bienvenida:latest .
+sudo groupadd containerd
+sudo usermod -aG containerd alkey
+sudo mkdir -p /run/buildkit
+sudo chown root:containerd /run/buildkit
+sudo chmod 775 /run/buildkit
+ps aux | grep buildkitd
+sudo pkill buildkitd
+sudo buildkitd --addr unix:///run/buildkit/buildkitd.sock &
+ps aux | grep buildkitd
+cd ~/mi_bienvenida
+sudo nerdctl build -t mi-bienvenida:latest .
+sudo nerdctl images | grep mi-bienvenida
+ls -l /run/buildkit/buildkitd.sock
+sudo chown root:containerd /run/buildkit/buildkitd.sock
+sudo chmod 660 /run/buildkit/buildkitd.sock
+CLEAR
+LS
+clear
+ls
+nano mi-bienvenida.yaml
+cat mi-bienvenida.yaml 
+clear
+kubectl apply -f mi-bienvenida.yaml 
+kubectl get pods -l app=bienvenida
+kubectl get service bienvenida-service
+kubectl get pods -l app=bienvenida
+sudo nerdctl images | grep mi-bienvenida
+cat mi-bienvenida.yaml 
+sudo nerdctl --namespace k8s.io images
+sudo nerdctl --namespace k8s.io images copy localhost/mi-bienvenida:latest localhost/mi-bienvenida:latest
+nerdctl --namespace k8s.io images copy localhost/mi-bienvenida:latest localhost/mi-bienvenida:latest
+sudo nerdctl --namespace k8s.io images | grep mi-bienvenida
+sudo nerdctl images | grep mi-bienvenida
+sudo nerdctl save mi-bienvenida:latest -o mi-bienvenida.tar
+sudo nerdctl --namespace k8s.io load -i mi-bienvenida.tar
+sudo nerdctl --namespace k8s.io images | grep mi-bienvenida
+kubectl delete pods -l app=bienvenida
+kubectl get pods -l app=bienvenida -w
+clear
+sudo nerdctl --namespace k8s.io build -t mi-bienvenida:latest .
+clear
+sudo nerdctl --namespace k8s.io images | grep mi-bienvenida
+kubectl delete pods -l app=bienvenida
+kubectl get pods -l app=bienvenida -w
+cat mi-bienvenida.yaml 
+kubectl get service bienvenida-service
+sudo nerdctl --namespace k8s.io tag mi-bienvenida:latest localhost/mi-bienvenida:latest
+sudo nerdctl --namespace k8s.io images | grep bienvenida
+nano mi-bienvenida.yaml
+kubectl apply -f mi-bienvenida.yaml
+kubectl get pods -l app=bienvenida -w
+kubectl delete -f mi-bienvenida.yaml
+kubectl delete deployment bienvenida
+kubectl delete service bienvenida-service
+kubectl get all -l app=bienvenida
+kubectl get pods -l app=bienvenida
+kubectl get services
+sudo nerdctl login
+sudo nerdctl images | grep mi-bienvenida
+sudo nerdctl tag mi-bienvenida:latest petobe/desarrollador:latest
+sudo nerdctl images | grep desarrollador
+sudo nerdctl push petobe/desarrollador:latest
+nano mi-bienvenida.yaml
+kubectl apply -f mi-bienvenida.yaml
+kubectl get pods -l app=bienvenida -w
+cat mi-bienvenida.yaml 
+kubectl get pods -l app=bienvenida -w
+kubectl create secret docker-registry regcred   --docker-server=https://index.docker.io/v1/   --docker-username=petobe   --docker-password=nahoxih414@coursora.com   --docker-email=nahoxih414@coursora.com
+mv mi-bienvenida.yaml mi-bienvenida_antigo.yaml 
+nano mi-bienvenida.yaml
+kubectl apply -f mi-bienvenida.yaml
+kubectl get pods -l app=bienvenida -w
+kubectl delete pods -l app=bienvenida
+kubectl get pods -l app=bienvenida -w
+nano mi-bienvenida.yaml 
+kubectl apply -f mi-bienvenida.yaml
+nano mi-bienvenida.yaml 
+kubectl apply -f mi-bienvenida.yaml
+kubectl delete pods -l app=bienvenida
+kubectl get service bienvenida-service
+clear
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.11.0/deploy/static/provider/baremetal/deploy.yaml
+kubectl get pods -n ingress-nginx -w
+clear
+nano ingress.yaml
+ls
+kubectl apply -f ingress.yaml
+rm ingress.yaml 
+nano ingress.yaml
+kubectl apply -f ingress.yaml
+kubectl get ingress
+kubectl get pods -n ingress-nginx
+git checkout -b kubernets_bienvenida
+git add .
+git commit -m "stable con dominio"
+git push
+git push --set-upstream origin kubernets_bienvenida
+cd .kuber_red/
+nano extra.txt
+c ..
+cd ..
+clear
+git add .
+git commit -m "extra"
+git push
+mkdir .script
+cd .script/
+clear
+nano deploy.sh
+chmod +x deploy.sh
+./deploy.sh
+clear
+nano undeploy.sh
+chmod +x undeploy.sh
+nano  despliegue_automático.sh
+chmod +x despliegue_automático.sh 
+cd ..
+git add .
+git commit -m "scripts"
+git push
+clear
+kubectl get service -n ingress-nginx
+ls}
+ls
+nano ingress.yaml 
+cat ingress.yaml 
+kubectl edit deployment ingress-nginx-controller -n ingress-nginx
+clear
+KUBE_EDITOR="nano" kubectl edit deployment ingress-nginx-controller -n ingress-nginx
+kubectl get pods -n ingress-nginx -w
+kubectl get pod ingress-nginx-controller-68fcd8bc7f-dx7mw -n ingress-nginx -o jsonpath='{.spec.hostNetwork}'
+sudo netstat -tuln | grep :80
+sudo ss -tuln | grep :80
+kubectl get pod ingress-nginx-controller-68fcd8bc7f-dx7mw -n ingress-nginx -o jsonpath='{.spec.containers[0].ports}'
+kubectl get pods -n ingress-nginx -w
+kubectl logs -n ingress-nginx ingress-nginx-controller-68fcd8bc7f-dx7mw
+sudo lsof -i :80
+sudo netstat -tulnp | grep :80
+curl -H "Host: bienvenida.local" http://localhost
+curl -H "Host: bienvenida.local" http://10.1.2.241
+sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 31985
+reboot
+sudo reboot
+clear
+kubectl get pods -l app=bienvenida -w
+clear
+cd mi_bienvenida/
+git pull
+cd
+cp .bash_history mi_bienvenida/.historial_comandos/historial_user 
+sudo su
+clear
+cd mi_bienvenida/
+git add .
+git commit -m "version final"
+gi push
+git push
+clear
+sudo init 0
+clear
+kubectl delete -f ingress.yaml
+kubectl delete ingress bienvenida-ingress
+kubectl delete -f mi-bienvenida.yaml
+kubectl delete deployment bienvenida
+kubectl delete service bienvenida-service
+sudo nerdctl --namespace k8s.io images | grep desarrollador
+kubectl delete ingress bienvenida-ingress
+kubectl get all -l app=bienvenida
+sudo nerdctl --namespace k8s.io images
+sudo nerdctl --namespace k8s.io rmi mi-bienvenida --force
+sudo nerdctl --namespace k8s.io rmi localhost/mi-bienvenida --force
+sudo nerdctl --namespace k8s.io images
+kubectl get nodes -o wide
+kubectl get pods -n kube-system
+kubectl get pods -n kube-flannel
+clear
+cd mi_bienvenida/
+git pull
+clear
+history 
+clear
+nerdctl login 10.1.2.253 -u admin -p dev38LAPAZ#
+nano ~/.nerdctl/config.json
+sudo nano ~/.nerdctl/config.json
+mkdir -p ~/.nerdctl
+nano ~/.nerdctl/config.json
+nerdctl login http://10.1.2.253 -u admin -p dev38LAPAZ#
+cat ~/.nerdctl/config.json
+sudo systemctl restart containerd
+echo "dev38LAPAZ#" | nerdctl login http://10.1.2.253 -u admin --password-stdin
+nerdctl login http://10.1.2.253 -u admin -p dev38LAPAZ#
+nerdctl login http://10.1.2.253 -u admin -p
+nerdctl login http://10.1.2.253 -u admin
+curl -v http://10.1.2.253/v2/
+nerdctl --debug login http://10.1.2.253 -u admin --password-stdin
+sudo nano /etc/hosts
+ping repo
+nerdctl --debug login repo -u admin --password-stdin
+nerdctl login http://10.1.2.253 -u admin
+nerdctl login REPO -u admin
+nerdctl login repo -u admin
+sudo reboot
+clear
+/etc/containerd/config.toml
+sudo nano /etc/containerd/config.toml
+sudo cat /etc/containerd/config.toml
+nerdctl login http://10.1.2.253 -u admin
+CLEAR
+clear
+sudo nano /etc/containerd/config.toml
+sudo systemctl restart containerd
+sudo systemctl status containerd
+nerdctl login 10.1.2.253
+sudo nano /etc/containerd/config.toml
+sudo systemctl restart containerd
+nerdctl login 10.1.2.253
+nerdctl login
+CLEAR
+clear
+nerdctl images
+sudo nerdctl images
+sudo nerdctl tag mi-bienvenida:latest 10.1.2.253/mi_bienvenida/mi-bienvenida:latest
+sudo nerdctl push 10.1.2.253/mi_bienvenida/mi-bienvenida:latest
+sudo nerdctl --insecure-registry push 10.1.2.253/mi_bienvenida/mi-bienvenida:latest
+sudo nerdctl tag mi-bienvenida:latest 10.1.2.253:8080/mi_bienvenida/mi-bienvenida:latest
+sudo nerdctl --insecure-registry push 10.1.2.253:8080/mi_bienvenida/mi-bienvenida:latest
+curl -v http://10.1.2.253:80/v2/
+curl -v https://10.1.2.253:443/v2/
+clear
+sudo nano /etc/hosts
+reboot
+sudo reboot
+clear
+sudo nerdctl tag mi-bienvenida:latest 10.1.2.190/mi_bienvenida/mi-bienvenida:latest
+sudo nerdctl push --insecure-registry 10.1.2.190/mi_bienvenida/mi-bienvenida:latest
+sudo nerdctl login 10.1.2.190
+sudo nerdctl login --insecure-registry http://10.1.2.190
+clear
+sudo nerdctl push --insecure-registry 10.1.2.190/mi_bienvenida/mi-bienvenida:latest
+curl -v http://10.1.2.190/v2/
+sudo nerdctl login --insecure-registry 10.1.2.190
+sudo nerdctl push --insecure-registry 10.1.2.190/mi_bienvenida/mi-bienvenida:latest
+cat /etc/containerd/config.toml
+sudo nano /etc/containerd/config.tomlsudo systemctl restart containerd
+
+sudo systemctl restart containerd
+sudo nerdctl push 10.1.2.190/mi_bienvenida/mi-bienvenida:latest
+sudo nerdctl push --insecure-registry 10.1.2.190/mi_bienvenida/mi-bienvenida:latest
+sudo containerd config dump | grep -A 5 '10.1.2.190'
+sudo nerdctl --insecure-registry push 10.1.2.190/mi_bienvenida/mi-bienvenida:latest
+export CONTAINERD_NAMESPACE=default
+sudo nerdctl --insecure-registry push 10.1.2.190/mi_bienvenida/mi-bienvenida:latest
+sudo nerdctl push 10.1.2.190/mi_bienvenida/mi-bienvenida:latest
+clear
+ping repo.fenix.com
+sudo nano /etc/resolv.conf 
+ping repo.fenix.com
+clear
+ping repo.fenix.com
+sudo nerdctl login repo.fenix.com
+sudo nerdctl login --insecure-registry repo.fenix.com
+sudo nerdctl --insecure-registry push repo.fenix.com/mi_bienvenida/mi-bienvenida:latest
+ping repo.fenix.com
+sudo nerdctl tag mi-bienvenida:latest repo.fenix.com/mi_bienvenida/mi-bienvenida:latest
+sudo nerdctl --insecure-registry push repo.fenix.com/mi_bienvenida/mi-bienvenida:latest
+clear
+kubectl create secret docker-registry regcred   --docker-server=https://repo.fenix.com   --docker-username=admin   --docker-password=dev38LAPAZ#   --docker-email=admin@example.com
+kubectl delete secret regcred
+kubectl create secret docker-registry regcred   --docker-server=https://repo.fenix.com   --docker-username=admin   --docker-password='dev38LAPAZ#'   --docker-email=admin@example.com
+clear
+ls
+cd kuber/
+clear
+ls
+nano deployment.yaml
+kubectl apply -f deployment.yaml
+kubectl get deployments
+kubectl get pods -l app=mi-bienvenida
+kubectl describe pod mi-bienvenida-699b8cc77-z7hbv
+nano deployment.yaml
+caat deployment.yaml 
+cat deployment.yaml 
+ping repo.fenix.com
+kubectl get pods -l app=mi-bienvenida
+sudo systemctl restart containerd
+sudo nerdctl pull repo.fenix.com/mi_bienvenida/mi-bienvenida:latest
+kubectl delete pod mi-bienvenida-699b8cc77-z7hbv
+clear
+ls
+cd 
+clear
+ls
+mv harbor.crt /usr/local/share/ca-certificates/harbor.crt
+sudo mv harbor.crt /usr/local/share/ca-certificates/harbor.crt
+sudo update-ca-certificates
+sudo systemctl restart containerd
+sudo nerdctl pull repo.fenix.com/mi_bienvenida/mi-bienvenida:latest
+kubectl delete pod -l app=mi-bienvenida
+kubectl rollout restart deployment mi-bienvenida
+kubectl get pods -l app=mi-bienvenida
+kubectl get svc
+cd kuber/
+clear
+ls
+nano service.yaml
+kubectl apply -f service.yaml
+kubectl get svc
+clear
+exit
+cd mi_bienvenida/
+clear
+ls
+git branch
+cd
+cd 
+cp .bash_history mi_bienvenida/.historial_comandos/historial_user2
+cd mi_bienvenida/
+git add .
+git commit -m "hito"
+git push
+clear
+git pull
+git status
+clear
+exit
+clear
+kubectl get pods -n ingress-nginx
+kubectl get svc -n ingress-nginx
+kubectl get pods -n ingress-nginx
+kubectl get ingress -A
+kubectl logs -n ingress-nginx deployment/ingress-nginx-controller
+clear
+kubectl get pods -n ingress-nginx
+kubectl get svc -n ingress-nginx
+kubectl get pods -n ingress-nginx
+kubectl get service mi-bienvenida-service
+kubectl get services
+kubectl get pods -o wide
+clear
+cat /etc/resolv.conf 
+clear
+ls
+cd kuber/
+ls
+cd ..
+clear
+ls
+cd mi_bienvenida/
+git pull
+lear
+clear
+sudo nano /etc/host
+clear
+cat /etc/resolv.conf 
+history 
+kubectl describe service mi-bienvenida-service
+kubectl delete all -l app=mi-bienvenida
+kubectl get all -l app=mi-bienvenida
+kubectl delete all -l app=mi-bienvenida
+kubectl get all -l app=mi-bienvenida
+kubectl get deployments
+kubectl delete deployment mi-bienvenida
+kubectl delete service mi-bienvenida-service
+kubectl get all -l app=mi-bienvenida
+clear
+cd
+clear
+ls
+cd nodejs
+mkdir nodejs
+cd nodejs/
+clear
+ls
+clear
+ls
+nano geoprtal-back.yaml
+kubectl apply -f geoprtal-back.yaml
+kubectl get pods
+kubectl get deployments
+kubectl get services
+kubectl get pods
+cat /etc/resolv.conf 
+ip add
+clear
+ls
+kubectl apply -f ingress.yaml 
+kubectl get ingress
+curl http://api.fenix.com
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.12/config/manifests/metallb-native.yaml
+kubectl get pods -n metallb-system
+kubectl get ipaddresspools -n metallb-system
+ping 10.1.2.181
+ping 10.1.2.183
+ping 10.1.2.170}
+ping 10.1.2.170
+ping 10.1.2.182
+ping 10.1.3.182
+ping 10.1.4.182
+ping 10.1.2.182
+ping 10.1.3.182
+ping 10.1.2.175
+ping 10.1.2.179
+ping 10.1.2.175
+ping 10.1.10.105
+kubectl get svc geoprtal-back-lb
+kubectl apply -f metallb-config-fija.yaml 
+kubectl get svc geoprtal-back-lb
+kubectl get svc -n ingress-nginx
+kubectl get svc geoprtal-back-lb
+kubectl get ipaddresspools -n metallb-system
+kubectl get l2advertisements -n metallb-system
+kubectl apply -f metallb-config.yaml
+kubectl get ipaddresspools -n metallb-system
+kubectl apply -f metallb-config.yaml
+kubectl get svc geoprtal-back-lb
+clear
+ls
+clear
+cd ..
+clear
+ls
+cd mi_bienvenida/
+history 
+clear
+ls
+mkdir despliegue
+cd ..
+ls
+mv nodejs/ mi_bienvenida/despliegue/
+ls
+cd mi_bienvenida/
+clear
+ls
+git pull
+git add .
+git commit -m "backent despliegue"
+git push
+clear
+cd despliegue/
+clear
+mkdir angular
+cd angular/
+clear
+cd
+kubectl rollout restart deployment geoprtal-back
+kubectl get pods -l app=geoprtal-back -w
+kubectl get pods -l app=geoprtal-back
+clear
+history 
+kubectl rollout restart deployment geoprtal-back
+kubectl get pods -l app=geoprtal-back -w
+kubectl rollout restart deployment geoprtal-back
+clear
+kubectl rollout restart deployment geoprtal-back
+kubectl get pods -l app=geoprtal-back -w
+kubectl get pods -l app=geoprtal-back
+clear
+kubectl get pods -l app=geoprtal-back
+clear
+kubectl get pods -l app=geoprtal-back
+clear
+cd mi_bienvenida/despliegue/angular/
+clear
+ls
+kubectl apply -f frontend-deployment.yaml 
+kubectl get pods -l app=geortal-frontend
+kubectl get svc geortal-frontend-service
+kubectl get ingressclass
+kubectl apply -f ingress-frontend_final.yaml 
+kubectl apply -f ingress-frontend.yaml 
+kubectl get ingress
+kubectl get svc -n ingress-nginx
+history 
+kubectl get svc geoprtal-back-lb
+kubectl apply -f metalib-config-fija.yaml 
+kubectl get svc geoportal-front-lb
+clear
+cd
+exit
