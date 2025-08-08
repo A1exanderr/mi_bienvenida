@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: geoprtal-back
+  labels:
+    app: geoprtal-back
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: geoprtal-back
+  template:
+    metadata:
+      labels:
+        app: geoprtal-back
+    spec:
+      containers:
+      - name: backend
+        image: repo.fenix.com/nodejs/geoprtal_back:latest
+        ports:
+        - containerPort: 3000  # Ajusta si tu app corre en otro puerto (ej: 8080, 3000, etc.)
+        env:
+        - name: NODE_ENV
+          value: "production"
+        # Agrega más variables si las necesitas
+      imagePullSecrets:
+      - name: regcred
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: geoprtal-back-service
+  labels:
+    app: geoprtal-back
+spec:
+  type: NodePort
+  selector:
+    app: geoprtal-back
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+      nodePort: 30080  # Opcional: si quieres acceder desde fuera por :30080

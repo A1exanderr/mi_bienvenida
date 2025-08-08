@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: geoprtal-back-ingress
+  annotations:
+    # Opcional: si necesitas reescribir la ruta (útil si usas path como /api)
+    # Si solo usas /, no es necesario rewrite-target
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    # Más anotaciones útiles (opcional)
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"  # quitar si usas HTTPS
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+spec:
+  ingressClassName: nginx  # Asegúrate de que este nombre coincida con tu IngressClass
+  rules:
+    - host: api.fenix.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: geoprtal-back-service      # ← Nombre de tu Service
+                port:
+                  number: 80                     # ← Puerto del servicio
