@@ -1,0 +1,473 @@
+clear
+figlet ALEKEY | sudo tee /etc/motd
+clear
+exit
+clear
+sudo su
+clear
+apt install nginx
+sudo apt install nginx
+clear
+sudo su
+curl -sSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc   | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null   && echo "deb https://ngrok-agent.s3.amazonaws.com buster main"   | sudo tee /etc/apt/sources.list.d/ngrok.list   && sudo apt update   && sudo apt install ngrok
+sudo apt install ngrok
+sudo apt update
+clear
+sudo apt install ca-certificates
+sudo update-ca-certificates
+sudo apt update
+sudo nano /etc/apt/sources.list
+cd /etc/apt/sources.list
+cd /etc/apt/
+rm sources.list
+sudo rm sources.list
+sudo nano sources.list
+sudo apt update
+curl -fsSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/ngrok.gpg
+cd
+curl -fsSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/ngrok.gpg
+sudo apt install curl
+curl -fsSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/ngrok.gpg
+}curl -fsSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/ngrok.gpg
+curl -fsSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/ngrok.gpg
+sudo apt update
+sudo rm /etc/apt/sources.list.d/ngrok.list
+cd /etc/apt/sources.list.d/
+ls
+cd
+curl -sSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc   | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null   && echo "deb https://ngrok-agent.s3.amazonaws.com buster main"   | sudo tee /etc/apt/sources.list.d/ngrok.list   && sudo apt update   && sudo apt install ngrok
+clear
+ngrok 80
+ngrok http 80
+ngrok config add-authtoken 2wpIIx0JfWdfizVLyDqWYzWShqr_4ePnHgkcVmd8qenThkYfL
+ngrok http 80
+ngrok http://localhost
+clear
+sudo /etc/init.d/nginx stop
+ping 8.8.8.8
+sudo /etc/init.d/nginx start
+sudo cp /etc/nginx/sites-available/default /root/
+sudo su
+ngrok http 80
+sudo cd /etc/nginx/sites-available/
+cd /etc/nginx/sites-available/
+cp default /var/www/alkey/
+rm default 
+sudo rm default 
+sudo su
+ngrok http 80
+clear
+sudo init 0
+clear
+cat /etc/nginx/sites-available/default 
+ip add
+clear
+ls
+cat /etc/nginx/sites-available/default 
+clear
+cat /etc/nginx/sites-available/default 
+sudo init 0
+clear
+ip add
+clear
+ip add
+}clear
+sudo init 0
+clear
+ip add
+clear
+sudo nano /etc/hostname 
+sudo nano /etc/hosts
+sudo nano /etc/host.conf 
+sudo nano /etc/hosts.allow 
+sudo nano /etc/hosts.deny 
+clear
+reboot
+sudo reboot
+clear
+sudo int 0
+clear
+kls
+clear
+ls
+sudo su
+sudo apt remove nginx nginx-common
+sudo apt purge nginx nginx-common
+sudo apt autoremove
+clear
+history 
+clear
+docker ps
+sudo /etc/init.d/docker start
+clear
+sudo /etc/init.d/docker start
+docker ps
+sudo usermod -aG docker $USER
+docker ps
+sudo reboot
+docker ps
+clear
+ls
+rm default 
+clea
+clear
+mkdir mi_bienvenida
+cd mi_bienvenida/
+clear
+nano Dockerfile
+mkdir html
+cd html/
+clear
+nano index.html
+nano style.ss
+nano style.css
+nano script.js
+clear
+cd ..
+clear
+docker-compose up --build -d
+docker compose up --build -d
+ls
+docker compose up --build -d
+clear
+ls
+cat Dockerfile 
+ls html/
+clear
+nano docker-compose.yml
+docker compose up --build -d
+docker ps
+history 
+sudo su
+clear
+ls
+cat /var/www/alkey/.bash_history 
+clear
+htop
+sudo apt install dstat
+dstat -cdnm --top-cpu
+sudo apt install dstat
+htop
+CLEAR
+clear
+dstat -cdnm --top-cpu
+clear
+sudo init 0
+ip add
+clear
+ip add
+clear
+sudo nano /etc/network/interfaces
+clear
+sudo reboot
+clear
+sudo init 0
+clear
+ls
+mv mi_bienvenida/ mi_bienvenida_2
+clear
+lñs
+clear
+ls
+git config --global credential.helper store
+git clone https://github.com/A1exanderr/mi_bienvenida.git
+clear
+ls
+cd mi_bienvenida
+clear
+lks
+clear
+ls
+nano README.md 
+git add .
+git commit -m servidor_test1
+git config --global user.email "looveyouuu10@gmail.com"
+git config --global user.name "Alex"
+git commit -m "servidor 1"
+git push
+clear
+nano README.md 
+git add .
+git commit -m "servidor test 1"
+git push
+clear
+ls
+git pull
+nano README.md 
+CLEAR
+clear
+ls
+clear
+ls
+nano README.md 
+git checkout -b docker
+git branch
+git add .
+git commit -m "informacion"
+git push
+git push --set-upstream origin docker
+git reset --soft HEAD~1
+git add .
+git commit -m "informacion"
+git push
+git push --set-upstream origin docker
+clear
+ls
+cd ..
+clear
+ls
+cd mi_bienvenida
+clear
+cd ..
+clear
+ls
+cd mi_bienvenida_2/
+clear
+lñs
+clear
+ls
+ls -a
+mv docker-compose.yml /var/www/alkey/mi_bienvenida
+mv Dockerfile /var/www/alkey/mi_bienvenida
+cp -r html/ /var/www/alkey/mi_bienvenida
+ls
+cd html/
+ls -a
+clear
+ls
+cd ..
+clear
+cd ..
+clear
+ls
+sudo rm mi_bienvenida_2/
+sudo rm -r mi_bienvenida_2/
+clear
+ls
+cd cd mi_bienvenida/
+cd mi_bienvenida/
+clear
+git add .
+git commit -m "version estable"
+git push
+clear
+sudo init 0
+nano /etc/network/interfaces
+sudo nano /etc/network/interfaces
+sudo init 0
+clear
+ls
+clear
+sudo /etc/hostname 
+sudo nano /etc/hostname 
+clear
+sudo nano /etc/hosts
+sudo nano /etc/hosts.allow 
+sudo nano /etc/host.conf 
+reboot
+sudo reboot
+clear
+docker ps
+clear
+mkdir ~/harbor && cd ~/harbor
+ls
+clear
+wget https://github.com/goharbor/harbor/releases/download/v2.11.0/harbor-online-installer-v2.11.0.tgz
+sudo apt install wget
+tar xvf harbor-online-installer-v2.11.0.tgz
+clear
+ls
+wget https://github.com/goharbor/harbor/releases/download/v2.11.0/harbor-online-installer-v2.11.0.tgz
+clear
+tar xvf harbor-online-installer-v2.11.0.tgz
+clear
+ls
+cd harbor
+clear
+ls
+cp harbor.yml.tmpl harbor.yml
+nano harbor.yml
+sudo ./install.sh
+docker ps
+clear
+ls
+cat harbor.yml
+nano harbor.yml
+sudo ./install.sh
+cat harbor.yml
+docker ps
+clear
+ip add
+clear
+sudo init 0
+clear
+ip add 
+clea
+c
+clear
+sudo init 0
+clear
+sudo nano /etc/network/interfaces
+cclear
+clear
+cclear
+clear
+sudo nano /etc/network/interfaces
+sudo init 0
+clear
+sudo su
+sudo nano /etc/hosts
+reboot
+sudo reboot
+docker ps
+cd harbor/harbor
+clear
+ls
+nano harbor.yml
+./install.sh 
+clear
+docker ps
+docker compose start
+docker-compose start
+sudo docker compose up -d
+clear
+sudo netstat -tulnp | grep 80
+curl -v http://10.1.2.190/v2/
+clear
+su
+sudo su
+su
+ping repo.fenix.com
+clear
+ls
+cd harbor/
+clear
+ls
+cd harbor
+clear
+ls
+mkdir ssl
+cd ssl/
+clear
+openssl genrsa -out /data/cert/harbor.key 4096
+pwd
+cd ..
+clear
+ls
+cat harbor.yml
+clear
+cd ssl/
+pwd
+sudo openssl genrsa -out harbor.key 4096
+ls
+sudo openssl req -x509 -new -nodes -key harbor.key -sha256 -days 365 -out harbor.crt -subj "/C=PE/ST=Lima/L=Lima/O=Fenix/OU=IT/CN=repo.fenix.com"
+cd ..
+clear
+ls
+nano harbor.yml
+sudo ./prepare
+sudo docker-compose down -v
+sudo docker-compose up -d
+sudo docker compose down -v
+sudo docker compose up -d
+clear
+cd ssl/
+clear
+ls
+nano harbor.crt 
+nano csr.conf
+[req]
+default_bits = 4096
+prompt = no
+default_md = sha256
+req_extensions = req_ext
+distinguished_name = dn
+[dn]
+CN = repo.fenix.com
+[req_ext]
+subjectAltName = @alt_names
+[alt_names]
+DNS.1 = repo.fenix.com
+IP.1 = 10.1.2.190
+[req]
+default_bits = 4096
+prompt = no
+default_md = sha256
+req_extensions = req_ext
+distinguished_name = dn
+[dn]
+CN = repo.fenix.com
+[req_ext]
+subjectAltName = @alt_names
+[alt_names]
+DNS.1 = repo.fenix.com
+IP.1 = 10.1.2.190
+clear
+openssl genrsa -out harbor.key 4096
+sudo openssl genrsa -out harbor.key 4096
+sudo openssl req -new -key harbor.key -out harbor.csr -config csr.conf
+sudo openssl x509 -req -days 365 -in harbor.csr -signkey harbor.key -out harbor.crt -extensions req_ext -extfile csr.conf
+cd ..
+clear
+sudo ./prepare
+sudo docker compose down -v
+sudo docker-compose up -d
+sudo docker compose up -d
+cd ssl/
+clear
+ls
+scp harbor.crt alkey@10.1.2.141:/var/www/alkey
+scp harbor.crt alkey@10.1.2.241:/var/www/alkey
+scp harbor.crt alkey@10.1.2.250:/var/www/alkey
+clear
+history 
+exit
+clear
+la
+clear
+ls
+cd mi_bienvenida/
+clear
+ls
+git pull
+clear
+ls
+ls -a
+.historial_comandos/
+cd .historial_comandos/
+clear
+ls
+mkdir repo
+cd repo/
+clear
+cd
+cp .bash_history mi_bienvenida/.historial_comandos/repo/historial_user
+sudo su
+cd mi_bienvenida/.historial_comandos/repo/
+ls -a
+ls -lsa
+sudo chown alkey:alkey histori_root 
+ls -lsa
+cd ..
+git add .
+git commit -m "stable"
+git push
+clear
+cd
+cd harbor/
+cat harbor.yml
+ls
+cd harbor
+cat harbor.yml
+clear
+cd ssl/
+cat csr.conf 
+clear
+ls
+cd ..
+clear
+ls
+cd 
+CLER
+clear
+exit
