@@ -1,0 +1,217 @@
+# Namespace opcional (descomenta si quieres usar namespace dedicado)
+# apiVersion: v1
+# kind: Namespace
+# metadata:
+#   name: geoportal
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: geoportal-frontend-config
+  # namespace: geoportal
+data:
+  API_URL: "http://api.fenix.com"
+  # Otras variables no sensibles aquí
+
+---
+# Secret para variables sensibles (ejemplo vacío — rellena si hace falta)
+apiVersion: v1
+kind: Secret
+metadata:
+  name: geoportal-frontend-secrets
+type: Opaque
+stringData:
+  # EJEMPLO: AUTH_TOKEN: "valor_secreto"
+  # No poner secretos reales en repositorios - usar Vault/SealedSecrets si es necesario.
+  # AUTH_TOKEN: "changeme"
+  ""
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: geoportal-frontend
+  labels:
+    app: geoportal-frontend
+  # namespace: geoportal
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: geoportal-frontend
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: geoportal-frontend
+    spec:
+      # imagePullSecrets (ya tenías regcred)
+      imagePullSecrets:
+        - name: regcred
+      containers:
+        - name: frontend
+          image: repo.fenix.com/angular/geortal-frontend:latest
+          ports:
+            - containerPort: 80
+          envFrom:
+            - configMapRef:
+                name: geoportal-frontend-config
+            - secretRef:
+                name: geoportal-frontend-secrets
+          resources:
+            requests:
+              cpu: "50m"
+              memory: "64Mi"
+            limits:
+              cpu: "250m"
+              memory: "256Mi"
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 15
+            periodSeconds: 20
+            timeoutSeconds: 3
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 2
+            failureThreshold: 3
+      # Preferencia para distribuir pods entre nodos (intentará no colocarlos en el mismo hostname)
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - geoportal-frontend
+                topologyKey: "kubernetes.io/hostname"
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: "kubernetes.io/hostname"
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              app: geoportal-frontend
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: geoportal-frontend-service
+  labels:
+    app: geoportal-frontend
+  # namespace: geoportal
+spec:
+  selector:
+    app: geoportal-frontend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: ClusterIP
+
+---
+# Ingress usando nginx ingress controller
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: geoportal-frontend-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/proxy-body-size: "50m"   # si necesitas subir archivos grandes
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "60"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "60"
+  # namespace: geoportal
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: geo.fenix.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: geoportal-frontend-service
+                port:
+                  number: 80
+
+---
+# (Opcional) Service LoadBalancer con MetalLB para IP fija en red on-prem
+apiVersion: v1
+kind: Service
+metadata:
+  name: geoportal-frontend-lb
+  annotations:
+    metallb.universe.tf/address-pool: default-addresspool
+  # namespace: geoportal
+spec:
+  type: LoadBalancer
+  loadBalancerIP: 10.1.10.106  # Ajusta al IP de tu pool MetalLB
+  selector:
+    app: geoportal-frontend
+  ports:
+    - port: 80
+      targetPort: 80
+
+---
+# Horizontal Pod Autoscaler (v2) midiendo CPU y memoria (requiere metrics-server o Prometheus adapter)
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: geoportal-frontend-hpa
+  # namespace: geoportal
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: geoportal-frontend
+  minReplicas: 2
+  maxReplicas: 4
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 60
+    - type: Resource
+      resource:
+        name: memory
+        target:
+          type: Utilization
+          averageUtilization: 70
+
+---
+# PodDisruptionBudget para mantener disponibilidad durante mantenimiento
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: geoportal-frontend-pdb
+  # namespace: geoportal
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: geoportal-frontend
+#kubectl apply -f geoportal-frontend-advanced.yaml
+#kubectl rollout status deployment/geoportal-frontend
+#kubectl get pods -o wide -l app=geoportal-frontend
+#kubectl get hpa geoportal-frontend-hpa
+#kubectl logs -l app=geoportal-frontend
