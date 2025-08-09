@@ -25,7 +25,7 @@ stringData:
   # EJEMPLO: AUTH_TOKEN: "valor_secreto"
   # No poner secretos reales en repositorios - usar Vault/SealedSecrets si es necesario.
   # AUTH_TOKEN: "changeme"
-  ""
+  {}
 
 ---
 apiVersion: apps/v1

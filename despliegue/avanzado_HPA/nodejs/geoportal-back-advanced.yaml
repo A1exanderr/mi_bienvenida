@@ -13,9 +13,7 @@ kind: Secret
 metadata:
   name: geoportal-back-secrets
 type: Opaque
-stringData:
-  # Ejemplo: DB_PASSWORD: "changeme"
-  ""
+stringData: {}
 
 ---
 apiVersion: apps/v1
@@ -188,4 +186,8 @@ spec:
   selector:
     matchLabels:
       app: geoportal-back
-#kubectl apply -f stack-geoportal.yaml
+#kubectl apply -f geoportal-back-advanced.yaml
+#Borra los pods que quedaron fallidos para que se recreen:
+#kubectl delete pod -l app=geoportal-back
+#Espera que los nuevos pods inicien:
+#kubectl get pods -o wide -l app=geoportal-back
